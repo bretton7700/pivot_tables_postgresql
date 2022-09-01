@@ -19,22 +19,23 @@ postgresql> CREATE EXTENSION IF NOT EXISTS tablefunc;
 
 #####
 CREATE TABLE marks (
-id int(11) NOT NULL auto_increment,
+id serial ,
 name varchar(15),
 exam int,
 score int,
 PRIMARY KEY (id)
 );
 
-insert into exams (name,exam,score) values ('dan',1,70);
-insert into exams (name,exam,score) values ('dan',2,77);
-insert into exams (name,exam,score) values ('dan',3,71);
-insert into exams (name,exam,score) values ('dan',4,70);
 
-insert into exams (name,exam,score) values ('joy',1,89);
-insert into exams (name,exam,score) values ('joy',2,87);
-insert into exams (name,exam,score) values ('joy',3,88);
-insert into exams (name,exam,score) values ('joy',4,89);
+insert into marks (name,exam,score) values ('dan',1,70);
+insert into marks (name,exam,score) values ('dan',2,77);
+insert into marks (name,exam,score) values ('dan',3,71);
+insert into marks (name,exam,score) values ('dan',4,70);
+
+insert into marks (name,exam,score) values ('joy',1,89);
+insert into marks (name,exam,score) values ('joy',2,87);
+insert into marks (name,exam,score) values ('joy',3,88);
+insert into marks (name,exam,score) values ('joy',4,89);
 
 ####
 mysql> select * from marks;
@@ -57,7 +58,7 @@ Let’s say you want to pivot the above table by Exam column, such that for each
 
 
 ####
- name | exam1 | exam2 | exam3 | exam4
+ name | exam_1 | exam_2 | exam_3 | exam_4
 ------+-------+-------+-------+-------
  dan  |    70 |    77 |    71 |    70
  joy  |    89 |    87 |    88 |    89
